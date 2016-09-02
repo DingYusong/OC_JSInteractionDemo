@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lBb-rc-5Ug">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="Demo" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-Xe-EO8">
+                                <rect key="frame" x="266" y="94" width="69" height="30"/>
+                                <state key="normal" title="JS调用OC"/>
+                                <connections>
+                                    <segue destination="Xsh-dY-4qX" kind="show" id="u2W-Hi-Vie"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceN-Kb-Axh">
+                                <rect key="frame" x="266" y="154" width="69" height="30"/>
+                                <state key="normal" title="OC调用JS"/>
+                                <connections>
+                                    <segue destination="hsr-WZ-OPM" kind="show" id="JOP-k0-xQz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ceN-Kb-Axh" firstAttribute="top" secondItem="dcj-Xe-EO8" secondAttribute="bottom" constant="30" id="CF8-v8-tqJ"/>
+                            <constraint firstItem="dcj-Xe-EO8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Gxd-nM-nPe"/>
+                            <constraint firstItem="dcj-Xe-EO8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kfH-Hq-nx1"/>
+                            <constraint firstItem="ceN-Kb-Axh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ps3-ge-foc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nnP-Ve-950"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1080" y="429"/>
+        </scene>
+        <!--JS调用OC-->
+        <scene sceneID="naX-m5-7P5">
+            <objects>
+                <viewController title="JS调用OC" id="Xsh-dY-4qX" customClass="JSCallOCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0fy-qX-QAR"/>
+                        <viewControllerLayoutGuide type="bottom" id="VJH-bp-rDJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ISh-Ck-Ok6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1t-oR-Xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845" y="246"/>
+        </scene>
+        <!--OC调用JS-->
+        <scene sceneID="0cg-fb-Wi8">
+            <objects>
+                <viewController title="OC调用JS" id="hsr-WZ-OPM" customClass="OCCallJSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g0h-I0-M5e"/>
+                        <viewControllerLayoutGuide type="bottom" id="9V5-Fc-znb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NJk-wm-CoQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdD-YS-QFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840" y="1014"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GvR-pN-bWu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lBb-rc-5Ug" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XG6-WM-hhR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="txc-DU-oa2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHr-Jr-syA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323" y="422"/>
         </scene>
     </scenes>
 </document>
