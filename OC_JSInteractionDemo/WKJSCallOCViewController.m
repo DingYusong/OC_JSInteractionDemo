@@ -1,34 +1,23 @@
 //
-//  JSCallOCViewController.m
+//  WKJSCallOCViewController.m
 //  OC_JSInteractionDemo
 //
-//  Created by 丁玉松 on 16/9/2.
+//  Created by DingYusong on 16/9/4.
 //  Copyright © 2016年 Beijing Yingyan Internet Co., Ltd. All rights reserved.
 //
 
-#import "JSCallOCViewController.h"
-#import <WebKit/WebKit.h>
+#import "WKJSCallOCViewController.h"
 
-@interface JSCallOCViewController ()<UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *uiWebView;
+@interface WKJSCallOCViewController ()
 
 @end
 
-@implementation JSCallOCViewController
+@implementation WKJSCallOCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.109:3000/gbanker.html"]];
-    self.uiWebView.delegate = self;
-    [self.uiWebView loadRequest:request];
+    // Do any additional setup after loading the view.
 }
-
-
--(void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

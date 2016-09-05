@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35FBA5E61D7BC5270020F0EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA5E51D7BC5270020F0EF /* WebKit.framework */; };
+		35FBA5E91D7C31440020F0EF /* WKJSCallOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBA5E81D7C31440020F0EF /* WKJSCallOCViewController.m */; };
+		35FBA5EC1D7C315D0020F0EF /* WKOCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBA5EB1D7C315D0020F0EF /* WKOCCallJSViewController.m */; };
 		F79496791D795DB400A3AE06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496781D795DB400A3AE06 /* main.m */; };
 		F794967C1D795DB400A3AE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F794967B1D795DB400A3AE06 /* AppDelegate.m */; };
 		F794967F1D795DB400A3AE06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F794967E1D795DB400A3AE06 /* ViewController.m */; };
@@ -16,9 +19,7 @@
 		F79496921D795DB400A3AE06 /* OC_JSInteractionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496911D795DB400A3AE06 /* OC_JSInteractionDemoTests.m */; };
 		F794969D1D795DB400A3AE06 /* OC_JSInteractionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F794969C1D795DB400A3AE06 /* OC_JSInteractionDemoUITests.m */; };
 		F79496AD1D795FAA00A3AE06 /* JSCallOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496AB1D795FAA00A3AE06 /* JSCallOCViewController.m */; };
-		F79496AE1D795FAA00A3AE06 /* JSCallOCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79496AC1D795FAA00A3AE06 /* JSCallOCViewController.xib */; };
 		F79496B21D795FC100A3AE06 /* OCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */; };
-		F79496B31D795FC100A3AE06 /* OCCallJSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79496B11D795FC100A3AE06 /* OCCallJSViewController.xib */; };
 		F79496B51D797D8500A3AE06 /* gbanker.html in Resources */ = {isa = PBXBuildFile; fileRef = F79496B41D797D8500A3AE06 /* gbanker.html */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35FBA5E51D7BC5270020F0EF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		35FBA5E71D7C31440020F0EF /* WKJSCallOCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKJSCallOCViewController.h; sourceTree = "<group>"; };
+		35FBA5E81D7C31440020F0EF /* WKJSCallOCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKJSCallOCViewController.m; sourceTree = "<group>"; };
+		35FBA5EA1D7C315D0020F0EF /* WKOCCallJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKOCCallJSViewController.h; sourceTree = "<group>"; };
+		35FBA5EB1D7C315D0020F0EF /* WKOCCallJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKOCCallJSViewController.m; sourceTree = "<group>"; };
 		F79496741D795DB400A3AE06 /* OC_JSInteractionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OC_JSInteractionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79496781D795DB400A3AE06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F794967A1D795DB400A3AE06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,10 +64,8 @@
 		F794969E1D795DB400A3AE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F79496AA1D795FAA00A3AE06 /* JSCallOCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCallOCViewController.h; sourceTree = "<group>"; };
 		F79496AB1D795FAA00A3AE06 /* JSCallOCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCallOCViewController.m; sourceTree = "<group>"; };
-		F79496AC1D795FAA00A3AE06 /* JSCallOCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSCallOCViewController.xib; sourceTree = "<group>"; };
 		F79496AF1D795FC100A3AE06 /* OCCallJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCallJSViewController.h; sourceTree = "<group>"; };
 		F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCallJSViewController.m; sourceTree = "<group>"; };
-		F79496B11D795FC100A3AE06 /* OCCallJSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCCallJSViewController.xib; sourceTree = "<group>"; };
 		F79496B41D797D8500A3AE06 /* gbanker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gbanker.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FBA5E61D7BC5270020F0EF /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,7 @@
 		F794966B1D795DB400A3AE06 = {
 			isa = PBXGroup;
 			children = (
+				35FBA5E51D7BC5270020F0EF /* WebKit.framework */,
 				F79496761D795DB400A3AE06 /* OC_JSInteractionDemo */,
 				F79496901D795DB400A3AE06 /* OC_JSInteractionDemoTests */,
 				F794969B1D795DB400A3AE06 /* OC_JSInteractionDemoUITests */,
@@ -120,10 +126,12 @@
 				F794967E1D795DB400A3AE06 /* ViewController.m */,
 				F79496AA1D795FAA00A3AE06 /* JSCallOCViewController.h */,
 				F79496AB1D795FAA00A3AE06 /* JSCallOCViewController.m */,
-				F79496AC1D795FAA00A3AE06 /* JSCallOCViewController.xib */,
+				35FBA5E71D7C31440020F0EF /* WKJSCallOCViewController.h */,
+				35FBA5E81D7C31440020F0EF /* WKJSCallOCViewController.m */,
 				F79496AF1D795FC100A3AE06 /* OCCallJSViewController.h */,
 				F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */,
-				F79496B11D795FC100A3AE06 /* OCCallJSViewController.xib */,
+				35FBA5EA1D7C315D0020F0EF /* WKOCCallJSViewController.h */,
+				35FBA5EB1D7C315D0020F0EF /* WKOCCallJSViewController.m */,
 				F79496801D795DB400A3AE06 /* Main.storyboard */,
 				F79496831D795DB400A3AE06 /* Assets.xcassets */,
 				F79496851D795DB400A3AE06 /* LaunchScreen.storyboard */,
@@ -262,10 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F79496B31D795FC100A3AE06 /* OCCallJSViewController.xib in Resources */,
 				F79496871D795DB400A3AE06 /* LaunchScreen.storyboard in Resources */,
 				F79496B51D797D8500A3AE06 /* gbanker.html in Resources */,
-				F79496AE1D795FAA00A3AE06 /* JSCallOCViewController.xib in Resources */,
 				F79496841D795DB400A3AE06 /* Assets.xcassets in Resources */,
 				F79496821D795DB400A3AE06 /* Main.storyboard in Resources */,
 			);
@@ -295,8 +301,10 @@
 				F794967F1D795DB400A3AE06 /* ViewController.m in Sources */,
 				F79496AD1D795FAA00A3AE06 /* JSCallOCViewController.m in Sources */,
 				F794967C1D795DB400A3AE06 /* AppDelegate.m in Sources */,
+				35FBA5EC1D7C315D0020F0EF /* WKOCCallJSViewController.m in Sources */,
 				F79496B21D795FC100A3AE06 /* OCCallJSViewController.m in Sources */,
 				F79496791D795DB400A3AE06 /* main.m in Sources */,
+				35FBA5E91D7C31440020F0EF /* WKJSCallOCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +528,7 @@
 				F79496A31D795DB400A3AE06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F79496A41D795DB400A3AE06 /* Build configuration list for PBXNativeTarget "OC_JSInteractionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +537,7 @@
 				F79496A61D795DB400A3AE06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F79496A71D795DB400A3AE06 /* Build configuration list for PBXNativeTarget "OC_JSInteractionDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +546,7 @@
 				F79496A91D795DB400A3AE06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,312 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- 我是注释-->
-        <meta charset = "utf-8" />
-        <meta content="telephone=no" name="format-detection">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-                <title>wap和app交互Demo页面</title>
-    </head>
-    <body onload="onPageStart('wap页面ID','wap页面来源页面')">
+<head>
+    <meta charset="utf-8" />
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>wap和app交互Demo页面</title>
+</head>
 
-        <h5>此页面为wap和app交互Demo页面</h5>
+<body onload="onPageStart('wap页面ID','wap页面来源页面')">
+    <h5>此页面为wap和app交互Demo页面</h5>
+    <h1 align="center">Wap和APP通过JS互相调用</h1>
+    <hr/>
+    <div id="div-a">
+        <center>
+            <input type="button" value="新闻分享" onclick="getShareParams();" />
+            <br/>
+            <br/>
+        </center>
+    </div>
+    <br><br><br>
+    <h1 align="center">Wap通过跳链调用APP</h1>
+    <a href="gbanker://activeGoto?depositType=3&tradeType=0">箱底金180天(depositType=3&tradeType=0)</a> <br><br>
 
-        <h1 align="center">Wap和APP通过JS互相调用</h1>
-        <hr/>
+    <script type="text/javascript">
+        console.log('haha123')
 
-        <!-- <div>
-         <font size="3" color="black">输入一个整数：</font>
-         <textarea  id="input" style="font-size:10pt;color:black;"></textarea>
-         </div>
-         <br/>
-
-         <div>
-         <font size="3" color="black">结果： <b id="result"> </b> </font>
-         </div>
-         <br/> -->
-
-        <div id="div-a">
-            <center>
-
-                <!-- <input type="button" value="调起客户端tips小提示" onclick="showTips('调起客户端tips');" />
-                <br/>
-                <br/>
-
-                <input type="button" value="调起客户端alert" onclick="showAlert({}'提示',‘客户端Alert','确定');" />
-                <br/>
-                <br/> -->
-
-                <!-- <input type="button" value="通用分享" onclick="share();" />
-                <br/>
-                <br/> -->
-
-                <input type="button" value="新闻分享" onclick="getShareParams();" />
-                <br/>
-                <br/>
-
-                <input type="button" value="截图分享" onclick="screenshotShare();" />
-                <br/>
-                <br/>
-
-                <input type="button" value="未登录情况调起登陆" onclick="login();" />
-                <br/>
-                <br/>
-
-                <input type="button" value="打开新的wap界面" onclick="openUrl();" />
-                <br/>
-                <br/>
-
-                <input type="button" value="拨打客服电话" onclick="callServicePhone();" />
-                <br/>
-                <br/>
-
-                <input type="button" value="wap记录点击事件" onclick="onEvent('wap页面ID','wap页面点击');" />
-                <br/>
-                <br/>
-
-            </center>
-        </div>
-
-
-        <br><br><br>
-
-        <h1 align="center">Wap通过跳链调用APP</h1>
-
-        <h2>买金（2.5及2.5以后版本）</h2>
-        <hr/>
-        <a href="gbanker://activeGoto?depositType=0&tradeType=2">买流动金</a> <br><br><br>
-
-        <a href="gbanker://activeGoto?depositType=6&tradeType=2">买箱底金7天 **活动**</a> <br><br>
-        <a href="gbanker://activeGoto?depositType=5&tradeType=2">买箱底金1天 **活动**</a> <br><br>
-        <a href="gbanker://activeGoto?depositType=5&tradeType=1">转箱底金1天 **活动**</a> <br><br>
-
-        <a href="gbanker://activeGoto?depositType=1&tradeType=1">转箱底金30天(depositType=1&tradeType=1)</a> <br><br>
-            <a href="gbanker://activeGoto?depositType=1&tradeType=0">转箱底金30天(depositType=1&tradeType=0)</a> <br><br>
-
-            <a href="gbanker://activeGoto?depositType=1&tradeType=2">买箱底金30天(depositType=1&tradeType=2)</a> <br><br>
-            <a href="gbanker://activeGoto?depositType=2&tradeType=1">转箱底金90天(depositType=2&tradeType=1)</a> <br><br>
-            <a href="gbanker://activeGoto?depositType=3&tradeType=2">买箱底金180天(depositType=3&tradeType=2)</a> <br><br>
-            <a href="gbanker://activeGoto?depositType=3&tradeType=0">箱底金180天(depositType=3&tradeType=0)</a> <br><br>
-            <a href="gbanker://activeGoto?depositType=300&tradeType=0">箱底金1800天(depositType=300&tradeType=0)</a> <br><br>
-            <a href="gbanker://activeGoto?depositType=3&tradeType=0">箱底金180天(depositType=3&tradeType=0)</a> <br><br>
-
-            <h2>买金（2.5之前版本，2.5之后废弃）</h2>
-            <hr/>
-            <a href="http://www.baidu.com/activeGoto?depositType=0&tradeType=2">买流动金</a> <br><br><br>
-
-            <a href="http://www.baidu.com/activeGoto?depositType=6&tradeType=2">买箱底金7天 **活动**</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=5&tradeType=2">买箱底金1天 **活动**</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=5&tradeType=1">转箱底金1天 **活动**</a> <br><br>
-
-            <a href="http://www.baidu.com/activeGoto?depositType=1&tradeType=1">转箱底金30天(depositType=1&tradeType=1)</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=1&tradeType=0">转箱底金30天(depositType=1&tradeType=0)</a> <br><br>
-
-            <a href="http://www.baidu.com/activeGoto?depositType=1&tradeType=2">买箱底金30天(depositType=1&tradeType=2)</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=2&tradeType=1">转箱底金90天(depositType=2&tradeType=1)</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=3&tradeType=2">买箱底金180天(depositType=3&tradeType=2)</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=3&tradeType=0">箱底金180天(depositType=3&tradeType=0)</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=300&tradeType=0">箱底金1800天(depositType=300&tradeType=0)</a> <br><br>
-            <a href="http://www.baidu.com/activeGoto?depositType=3&tradeType=0">箱底金180天(depositType=3&tradeType=0)</a> <br><br>
-
-
-            <h2>分享</h2>
-            <hr/>
-            <a href="gbanker://share?code=oldPullNew&needLogin=0"> 用户自己选择渠道分享</a> <br /><br /><br />
-            <a href="gbanker://share?code=oldPullNew&needLogin=0&platform=3"> 分享到 qq</a> <br /><br /><br />
-            <a href="gbanker://share?code=oldPullNew&needLogin=0&platform=4"> 分享到 qq空间</a> <br /><br /><br />
-            <a href="gbanker://share?code=oldPullNew&needLogin=0&platform=1"> 分享到 微信</a> <br /><br /><br />
-            <a href="gbanker://share?code=oldPullNew&needLogin=0&platform=2"> 分享到 微信朋友圈</a> <br /><br /><br />
-            <a href="gbanker://share?code=oldPullNew&needLogin=0&platform=2&pushShareMark=1"> 分享到 微信朋友圈 并上传数据</a> <br /><br /><br />
-            <!-- <a href="itms-services://?action=download-manifest&url=https://dn-dys.qbox.me/201601061939381.plist"> 安装GoldWallet</a> <br /><br /><br /> -->
-
-            <h2>保本金</h2>
-            <hr/>
-            <!-- 保本金 -->
-            <a href="gbanker://page_baobenshengou?depositType=150"> 保本金 申购 (depositType = 100)</a> <br /><br />
-
-
-            <h2>回到上级页面</h2>
-            <hr/>
-            <!-- 保本金 -->
-            <a href="gbanker://gbanker_Upper">回到APP的上级页面</a> <br /><br />
-            <a href="http://www.baidu.com/gbanker_Upper">回到APP的上级页面老版本</a> <br /><br />
-
-            <h2>猜涨跌</h2>
-            <hr/>
-            <!-- 金价猜涨 -->
-            <a href="gbanker://page_guessgoldprice?code=guessGoldPrice&choseType=1&moneyDescription=最低100元，最高999元&moneyMin=10000&moneyMax=99900&endTime=2016-01-08 10:00:00&startTime=2016-01-07 11:52:00"> 金价猜涨最低100元，最高999元</a> <br /><br />
-            <!-- 金价猜跌,最少100 -->
-            <a href="gbanker://page_guessgoldprice?code=guessGoldPrice&choseType=2&moneyDescription=最低100元&moneyMin=10000&endTime=2016-01-08 10:00:00&startTime=2016-01-07 11:52:00"> 金价猜跌最少100</a> <br /><br />
-            <!-- 金价猜跌 -->
-            <a href="gbanker://page_guessgoldprice?code=guessGoldPrice&choseType=2&moneyDescription=最高999元&moneyMax=99900&endTime=2016-01-08 10:00:00&startTime=2016-01-07 11:52:00"> 金价猜跌最大999</a> <br /><br />
-            <a href="gbanker://page_guessgoldprice?code=guessGoldPrice&choseType=1&endTime=2016-01-08 10:00:00&startTime=2016-01-07 11:52:00"> 金价猜涨</a> <br /><br />
-
-            <h2>跳页面</h2>
-            <hr/>
-            <a href="gbanker://page_hongbao">我的红包页面</a> <br /><br /><br />
-            <a href="gbanker://page_coupon">我的优惠券页面</a> <br /><br /><br />
-            <a href="gbanker://page_purchasegold">切换买金页面</a> <br /><br /><br />
-
-            <script type="text/javascript">
-            console.log('haha123')
-
-            function getPlatform() {
-            	var userAgent = navigator.userAgent.toLowerCase();
-                if(userAgent.match(/(iphone|android|MicroMessenger)/)){
-                    return userAgent.match(/(iphone|android|MicroMessenger)/)[1];
-                 }
-                 return '';
-                }
-
-            <!-- 调用iphone方法，兼容UIWebView(iOS7)和WKWebView(iOS8+) -->
-            function callIphoneMethod(methodName,params){
-              try {
-                  iphone.setValue(methodName,params);
-                } catch (e) {
-              }
-                window.webkit.messageHandlers[methodName].postMessage(params);
+        function getPlatform() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            if (userAgent.match(/(iphone|android|MicroMessenger)/)) {
+                return userAgent.match(/(iphone|android|MicroMessenger)/)[1];
             }
+            return '';
+        }
 
-            function checkOnLoad (name,job) {
-            // body...
-            // alert("welcome "+ name + ' ' + job)
-            alert("此页面为wap和app交互Demo页面")
-            }
-
-
-            <!-- 显示Tips -->
-            function showTips(params) {
+        <!-- 调用iphone方法，兼容UIWebView(iOS7)和WKWebView(iOS8+) -->
+        function callIphoneMethod(methodName, params) {
+            try {
+                iphone.setValue(methodName, params);
+            } catch (e) {}
+            window.webkit.messageHandlers[methodName].postMessage(params);
+        }
+        <!-- 调用客户端分享 -->
+        function getShareParams() {
+            var params = {
+                'type': 2,
+                'title': '黄金2016年会有大反弹',
+                'imageUrl': 'http://static.huangjinqianbao.com/static/img/storeIcon/xinjiekouwanfeng.png',
+                'url': 'https://www.g-banker.com/headline/detail?id=1ad22ebcef2e487dadc67a6f125db746',
+                'description': '周三美原油期货下跌0.46美元至每桶28.00美元，稍早曾跌至27.92美元，创2003年9月以来新低。'
+            };
             if (getPlatform() == 'android') {
-              android.setValue('showTips', params);
-            }
-            else {
-              callIphoneMethod('showTips',params);
-            }
-            }
-
-            <!-- 显示-->
-            function showAlert(params) {
-            if (getPlatform() == 'android') {
-              android.setValue('showAlert', params);
-            }
-            else {
-              callIphoneMethod('showAlert',params);
-            }
-            }
-
-            <!-- 确定app是否出现右上角分享按钮 -->
-            function isCanShare() {
-
-            if (getPlatform() == 'android') {
-              android.setValue('isCanShare', true);
-            }
-            else {
-              callIphoneMethod('isCanShare',true);
-            }
-            }
-
-            <!-- 调用客户端分享 -->
-            function getShareParams(){
-            var params = {'type':2,'title' : '黄金2016年会有大反弹', 'imageUrl' : 'http://static.huangjinqianbao.com/static/img/storeIcon/xinjiekouwanfeng.png','url':'https://www.g-banker.com/headline/detail?id=1ad22ebcef2e487dadc67a6f125db746','description':'周三美原油期货下跌0.46美元至每桶28.00美元，稍早曾跌至27.92美元，创2003年9月以来新低。'};
-            if (getPlatform() == 'android') {
-              // android.setValue('getShareParams', params);
-              android.screenshotShare();
-            }
-            else {
-              callIphoneMethod('getShareParams',params);
-            }
-            }
-
-            <!-- 调用客户端分享 -->
-            function share(){
-            var params = {'type':1,'title' : '黄金2016年会有大反弹', 'imageUrl' : 'http://static.huangjinqianbao.com/static/img/storeIcon/xinjiekouwanfeng.png','url':'https://www.g-banker.com/headline/detail?id=1ad22ebcef2e487dadc67a6f125db746','description':'周三美原油期货下跌0.46美元至每桶28.00美元，稍早曾跌至27.92美元，创2003年9月以来新低。'};
-            if (getPlatform() == 'android') {
-              android.setValue('share', params);
-            }
-            else {
-              callIphoneMethod('share',params);
-            }
-            }
-
-            <!-- 调用客户端截屏分享 -->
-            function screenshotShare(){
-              var params = {'platform' : 0 , 'pushShareMark' : '1', 'code' : 'aaa','needLogin':0,};
-              if (getPlatform() == 'android') {
+                // android.setValue('getShareParams', params);
                 android.screenshotShare();
-              }
-              else {
-                callIphoneMethod('screenshotShare',params);
-              }
+            } else {
+                callIphoneMethod('getShareParams', params);
             }
+        }
+    </script>
+</body>
 
-            <!-- 调用客户端登陆流程 -->
-            function login() {
-              if (getPlatform() == 'android') {
-                android.login();
-              }else {
-                callIphoneMethod('login','');
-              }
-            }
-
-            <!-- 调用客户端打客服电话 -->
-            function callServicePhone() {
-            var message = { 'telephone':'4000-339-993','message' : '(工作日 09:00-21:00 周末 10:00-15:00)', 'title' : '拨打金店电话400-652-7878' };
-
-            if (getPlatform() == 'android') {
-              android.setValue('callServicePhone',message);
-            }
-            else {
-              callIphoneMethod('callServicePhone',message);
-            }
-            }
-
-            <!-- 在新的页面打开URL（上次热门活动使用） -->
-            function openUrl() {
-            if (getPlatform() == 'android') {
-              android.setValue('openUrl','https://www.baidu.com');
-            }
-            else {
-              callIphoneMethod('openUrl','https://www.baidu.com');
-            }
-            }
-
-            <!-- stay进入页面 -->
-            function onPageStart(pageName,sourcePageName) {
-            var message = { 'currentPage':pageName,'sourcePage':sourcePageName};
-
-            if (getPlatform() == 'android') {
-              android.setValue('onPageStart',pageName,sourcePageName);
-            }
-            else {
-              callIphoneMethod('onPageStart',message);
-            }
-
-            }
-
-            <!-- stay离开页面 -->
-            function onPageEnd(pageName) {
-            if (getPlatform() == 'android') {
-              android.setValue('onPageEnd',pageName);
-            }
-            else {
-              callIphoneMethod('onPageEnd',pageName);
-            }
-            }
-
-            <!-- click点击事件 -->
-            function onEvent(clickFrom,clickName) {
-            var message = { 'clickFrom':clickFrom,'clickName':clickName};
-
-            if (getPlatform() == 'android') {
-              android.setValue('onEvent',clickFrom,clickName);
-            }
-            else {
-              callIphoneMethod('onEvent',message);
-            }
-            }
-
-            </script>
-
-    </body>
 </html>

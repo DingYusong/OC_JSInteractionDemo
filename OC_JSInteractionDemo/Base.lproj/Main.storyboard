@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lBb-rc-5Ug">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lBb-rc-5Ug">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,24 +18,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-Xe-EO8">
-                                <rect key="frame" x="266" y="94" width="69" height="30"/>
-                                <state key="normal" title="JS调用OC"/>
+                                <rect key="frame" x="221" y="94" width="158" height="30"/>
+                                <state key="normal" title="JS调用OC(UIWebView)"/>
                                 <connections>
                                     <segue destination="Xsh-dY-4qX" kind="show" id="u2W-Hi-Vie"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceN-Kb-Axh">
-                                <rect key="frame" x="266" y="154" width="69" height="30"/>
-                                <state key="normal" title="OC调用JS"/>
+                                <rect key="frame" x="221" y="154" width="158" height="30"/>
+                                <state key="normal" title="OC调用JS(UIWebView)"/>
                                 <connections>
                                     <segue destination="hsr-WZ-OPM" kind="show" id="JOP-k0-xQz"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epe-Nk-2qD">
+                                <rect key="frame" x="217" y="215" width="167" height="30"/>
+                                <state key="normal" title="JS调用OC(WKWebView)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-zP-U4S">
+                                <rect key="frame" x="217" y="275" width="167" height="30"/>
+                                <state key="normal" title="OC调用JS(WKWebView)"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ceN-Kb-Axh" firstAttribute="top" secondItem="dcj-Xe-EO8" secondAttribute="bottom" constant="30" id="CF8-v8-tqJ"/>
+                            <constraint firstItem="epe-Nk-2qD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D2g-Q8-mSd"/>
                             <constraint firstItem="dcj-Xe-EO8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Gxd-nM-nPe"/>
+                            <constraint firstItem="CJa-zP-U4S" firstAttribute="top" secondItem="epe-Nk-2qD" secondAttribute="bottom" constant="30" id="IKu-az-H3R"/>
+                            <constraint firstItem="epe-Nk-2qD" firstAttribute="top" secondItem="ceN-Kb-Axh" secondAttribute="bottom" constant="31" id="PUE-DL-t3i"/>
+                            <constraint firstItem="CJa-zP-U4S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R8A-0P-A1N"/>
                             <constraint firstItem="dcj-Xe-EO8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kfH-Hq-nx1"/>
                             <constraint firstItem="ceN-Kb-Axh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ps3-ge-foc"/>
                         </constraints>
@@ -49,7 +61,7 @@
         <!--JS调用OC-->
         <scene sceneID="naX-m5-7P5">
             <objects>
-                <viewController title="JS调用OC" id="Xsh-dY-4qX" customClass="JSCallOCViewController" sceneMemberID="viewController">
+                <viewController title="JS调用OC" automaticallyAdjustsScrollViewInsets="NO" id="Xsh-dY-4qX" customClass="JSCallOCViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0fy-qX-QAR"/>
                         <viewControllerLayoutGuide type="bottom" id="VJH-bp-rDJ"/>
@@ -57,12 +69,45 @@
                     <view key="view" contentMode="scaleToFill" id="ISh-Ck-Ok6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCC-Ud-b4p">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kCC-Ud-b4p" firstAttribute="leading" secondItem="ISh-Ck-Ok6" secondAttribute="leading" id="5tl-h1-f1X"/>
+                            <constraint firstItem="kCC-Ud-b4p" firstAttribute="top" secondItem="0fy-qX-QAR" secondAttribute="bottom" id="LXH-yd-OdC"/>
+                            <constraint firstAttribute="trailing" secondItem="kCC-Ud-b4p" secondAttribute="trailing" id="Pmb-yk-37U"/>
+                            <constraint firstItem="VJH-bp-rDJ" firstAttribute="top" secondItem="kCC-Ud-b4p" secondAttribute="bottom" id="qK2-oV-iUf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="uiWebView" destination="kCC-Ud-b4p" id="frX-OZ-XzT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1t-oR-Xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="246"/>
+            <point key="canvasLocation" x="1935" y="-800"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rsd-F8-imM">
+            <objects>
+                <viewController id="UoH-TQ-e9q" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jsY-bj-2FV"/>
+                        <viewControllerLayoutGuide type="bottom" id="B61-C8-eFX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hct-bj-ddU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cja-Ck-nOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953" y="-95"/>
         </scene>
         <!--OC调用JS-->
         <scene sceneID="0cg-fb-Wi8">
@@ -80,7 +125,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdD-YS-QFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840" y="1014"/>
+            <point key="canvasLocation" x="2050" y="840"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8rZ-x0-tpc">
+            <objects>
+                <viewController id="2ry-kJ-Y24" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2l7-56-pu2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hg6-v4-meY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PAJ-nb-OfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txw-T8-F9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="1613"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GvR-pN-bWu">
