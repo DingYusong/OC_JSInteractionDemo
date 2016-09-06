@@ -21,6 +21,7 @@
 		F79496AD1D795FAA00A3AE06 /* JSCallOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496AB1D795FAA00A3AE06 /* JSCallOCViewController.m */; };
 		F79496B21D795FC100A3AE06 /* OCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */; };
 		F79496B51D797D8500A3AE06 /* gbanker.html in Resources */ = {isa = PBXBuildFile; fileRef = F79496B41D797D8500A3AE06 /* gbanker.html */; };
+		F79496B71D7D140600A3AE06 /* WKWebViewDemo.html in Resources */ = {isa = PBXBuildFile; fileRef = F79496B61D7D140600A3AE06 /* WKWebViewDemo.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F79496AF1D795FC100A3AE06 /* OCCallJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCallJSViewController.h; sourceTree = "<group>"; };
 		F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCallJSViewController.m; sourceTree = "<group>"; };
 		F79496B41D797D8500A3AE06 /* gbanker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gbanker.html; sourceTree = "<group>"; };
+		F79496B61D7D140600A3AE06 /* WKWebViewDemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebViewDemo.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		F79496761D795DB400A3AE06 /* OC_JSInteractionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F79496B61D7D140600A3AE06 /* WKWebViewDemo.html */,
 				F79496B41D797D8500A3AE06 /* gbanker.html */,
 				F794967A1D795DB400A3AE06 /* AppDelegate.h */,
 				F794967B1D795DB400A3AE06 /* AppDelegate.m */,
@@ -274,6 +277,7 @@
 				F79496B51D797D8500A3AE06 /* gbanker.html in Resources */,
 				F79496841D795DB400A3AE06 /* Assets.xcassets in Resources */,
 				F79496821D795DB400A3AE06 /* Main.storyboard in Resources */,
+				F79496B71D7D140600A3AE06 /* WKWebViewDemo.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

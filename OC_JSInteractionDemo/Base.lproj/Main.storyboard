@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lBb-rc-5Ug">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lBb-rc-5Ug">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -34,10 +34,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epe-Nk-2qD">
                                 <rect key="frame" x="217" y="215" width="167" height="30"/>
                                 <state key="normal" title="JS调用OC(WKWebView)"/>
+                                <connections>
+                                    <segue destination="UoH-TQ-e9q" kind="show" id="NDV-Ib-She"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-zP-U4S">
                                 <rect key="frame" x="217" y="275" width="167" height="30"/>
                                 <state key="normal" title="OC调用JS(WKWebView)"/>
+                                <connections>
+                                    <segue destination="2ry-kJ-Y24" kind="show" id="ugl-6s-2oD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -56,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="429"/>
+            <point key="canvasLocation" x="209" y="392"/>
         </scene>
         <!--JS调用OC-->
         <scene sceneID="naX-m5-7P5">
@@ -89,12 +95,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1t-oR-Xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="-800"/>
+            <point key="canvasLocation" x="2481" y="-1106"/>
         </scene>
-        <!--View Controller-->
+        <!--CallOC View Controller-->
         <scene sceneID="rsd-F8-imM">
             <objects>
-                <viewController id="UoH-TQ-e9q" sceneMemberID="viewController">
+                <viewController id="UoH-TQ-e9q" customClass="WKJSCallOCViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jsY-bj-2FV"/>
                         <viewControllerLayoutGuide type="bottom" id="B61-C8-eFX"/>
@@ -107,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cja-Ck-nOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953" y="-95"/>
+            <point key="canvasLocation" x="2481" y="-422"/>
         </scene>
         <!--OC调用JS-->
         <scene sceneID="0cg-fb-Wi8">
@@ -125,12 +131,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdD-YS-QFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="840"/>
+            <point key="canvasLocation" x="2481" y="265"/>
         </scene>
-        <!--View Controller-->
+        <!--CallJS View Controller-->
         <scene sceneID="8rZ-x0-tpc">
             <objects>
-                <viewController id="2ry-kJ-Y24" sceneMemberID="viewController">
+                <viewController id="2ry-kJ-Y24" customClass="WKOCCallJSViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2l7-56-pu2"/>
                         <viewControllerLayoutGuide type="bottom" id="Hg6-v4-meY"/>
@@ -143,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txw-T8-F9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="1613"/>
+            <point key="canvasLocation" x="2481" y="974"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GvR-pN-bWu">
@@ -161,7 +167,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHr-Jr-syA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="422"/>
+            <point key="canvasLocation" x="-610" y="392"/>
         </scene>
     </scenes>
 </document>

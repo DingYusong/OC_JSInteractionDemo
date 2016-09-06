@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JavaScriptCore/JavaScriptCore.h>
 
-@interface JSCallOCViewController : UIViewController
+@protocol TestJSExport <JSExport>
+
+JSExportAs(setValue,
+           -(void)receivedMessage:(id)value
+           );
+@end
+
+
+@interface JSCallOCViewController : UIViewController<UIWebViewDelegate,TestJSExport>
+
+@property (nonatomic, strong) JSContext *context;
 
 @end

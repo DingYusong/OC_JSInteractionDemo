@@ -9,7 +9,7 @@
 </head>
 
 <body onload="onPageStart('wap页面ID','wap页面来源页面')">
-    <h2 align="center">Wap和APP交互(UIWebView)</h2>
+    <h2 align="center">Wap和APP交互(WKWebView)</h2>
     <hr/>
 
     <h3 align="center">Wap通过跳链调用APP</h3>
@@ -35,7 +35,7 @@
                 'url': 'https://www.g-banker.com/',
                 'description': '黄金看涨'
             };
-            iOS.setValue("share", params);
+            window.webkit.messageHandlers.share.postMessage(params);
         }
     </script>
 </body>
