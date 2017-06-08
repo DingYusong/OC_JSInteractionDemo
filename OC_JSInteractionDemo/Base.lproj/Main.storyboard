@@ -28,13 +28,6 @@
                                     <segue destination="Xsh-dY-4qX" kind="show" id="u2W-Hi-Vie"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceN-Kb-Axh">
-                                <rect key="frame" x="108.5" y="154" width="158" height="30"/>
-                                <state key="normal" title="OC调用JS(UIWebView)"/>
-                                <connections>
-                                    <segue destination="hsr-WZ-OPM" kind="show" id="JOP-k0-xQz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epe-Nk-2qD">
                                 <rect key="frame" x="104" y="215" width="167" height="30"/>
                                 <state key="normal" title="JS调用OC(WKWebView)"/>
@@ -42,24 +35,13 @@
                                     <segue destination="UoH-TQ-e9q" kind="show" id="NDV-Ib-She"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-zP-U4S">
-                                <rect key="frame" x="104" y="275" width="167" height="30"/>
-                                <state key="normal" title="OC调用JS(WKWebView)"/>
-                                <connections>
-                                    <segue destination="2ry-kJ-Y24" kind="show" id="ugl-6s-2oD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ceN-Kb-Axh" firstAttribute="top" secondItem="dcj-Xe-EO8" secondAttribute="bottom" constant="30" id="CF8-v8-tqJ"/>
                             <constraint firstItem="epe-Nk-2qD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D2g-Q8-mSd"/>
                             <constraint firstItem="dcj-Xe-EO8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Gxd-nM-nPe"/>
-                            <constraint firstItem="CJa-zP-U4S" firstAttribute="top" secondItem="epe-Nk-2qD" secondAttribute="bottom" constant="30" id="IKu-az-H3R"/>
-                            <constraint firstItem="epe-Nk-2qD" firstAttribute="top" secondItem="ceN-Kb-Axh" secondAttribute="bottom" constant="31" id="PUE-DL-t3i"/>
-                            <constraint firstItem="CJa-zP-U4S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R8A-0P-A1N"/>
+                            <constraint firstItem="epe-Nk-2qD" firstAttribute="top" secondItem="dcj-Xe-EO8" secondAttribute="bottom" constant="91" id="V2G-uG-FVD"/>
                             <constraint firstItem="dcj-Xe-EO8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kfH-Hq-nx1"/>
-                            <constraint firstItem="ceN-Kb-Axh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ps3-ge-foc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nnP-Ve-950"/>
@@ -99,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1t-oR-Xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="-1106"/>
+            <point key="canvasLocation" x="2070" y="50"/>
         </scene>
         <!--CallOC View Controller-->
         <scene sceneID="rsd-F8-imM">
@@ -117,43 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cja-Ck-nOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="-422"/>
-        </scene>
-        <!--OC调用JS-->
-        <scene sceneID="0cg-fb-Wi8">
-            <objects>
-                <viewController title="OC调用JS" id="hsr-WZ-OPM" customClass="OCCallJSViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g0h-I0-M5e"/>
-                        <viewControllerLayoutGuide type="bottom" id="9V5-Fc-znb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NJk-wm-CoQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdD-YS-QFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2481" y="265"/>
-        </scene>
-        <!--CallJS View Controller-->
-        <scene sceneID="8rZ-x0-tpc">
-            <objects>
-                <viewController id="2ry-kJ-Y24" customClass="WKOCCallJSViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2l7-56-pu2"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hg6-v4-meY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PAJ-nb-OfZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="txw-T8-F9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2481" y="974"/>
+            <point key="canvasLocation" x="2070" y="734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GvR-pN-bWu">
