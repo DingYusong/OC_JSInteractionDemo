@@ -9,7 +9,9 @@
 #import "WKJSCallOCViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface WKJSCallOCViewController ()
+@interface WKJSCallOCViewController ()<WKUIDelegate,WKNavigationDelegate>
+
+@property (nonatomic ,strong) WKWebView *webView;
 
 @end
 
@@ -17,8 +19,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20)];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:3000/demo01.html"]];
+    self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
+    [self.webView loadRequest:request];
+
+    
+    [self.view addSubview:self.webView];
+    
     // Do any additional setup after loading the view.
 }
+
+
+#pragma mark - WKUIDelegate
+
+
+
+
+#pragma mark - WKNavigationDelegate
+
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation;
+{
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

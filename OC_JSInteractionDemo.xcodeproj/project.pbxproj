@@ -22,6 +22,7 @@
 		F79496B21D795FC100A3AE06 /* OCCallJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */; };
 		F79496B51D797D8500A3AE06 /* gbanker.html in Resources */ = {isa = PBXBuildFile; fileRef = F79496B41D797D8500A3AE06 /* gbanker.html */; };
 		F79496B71D7D140600A3AE06 /* WKWebViewDemo.html in Resources */ = {isa = PBXBuildFile; fileRef = F79496B61D7D140600A3AE06 /* WKWebViewDemo.html */; };
+		F7F9DC5A1ED821E400C40939 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F9DC591ED821E400C40939 /* WebViewJavascriptBridge_JS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		F79496B01D795FC100A3AE06 /* OCCallJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCallJSViewController.m; sourceTree = "<group>"; };
 		F79496B41D797D8500A3AE06 /* gbanker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gbanker.html; sourceTree = "<group>"; };
 		F79496B61D7D140600A3AE06 /* WKWebViewDemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKWebViewDemo.html; sourceTree = "<group>"; };
+		F7F9DC581ED821E400C40939 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		F7F9DC591ED821E400C40939 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 			children = (
 				F79496B61D7D140600A3AE06 /* WKWebViewDemo.html */,
 				F79496B41D797D8500A3AE06 /* gbanker.html */,
+				F7F9DC581ED821E400C40939 /* WebViewJavascriptBridge_JS.h */,
+				F7F9DC591ED821E400C40939 /* WebViewJavascriptBridge_JS.m */,
 				F794967A1D795DB400A3AE06 /* AppDelegate.h */,
 				F794967B1D795DB400A3AE06 /* AppDelegate.m */,
 				F794967D1D795DB400A3AE06 /* ViewController.h */,
@@ -237,6 +242,8 @@
 				TargetAttributes = {
 					F79496731D795DB400A3AE06 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = RCM2E8M298;
+						ProvisioningStyle = Manual;
 					};
 					F794968C1D795DB400A3AE06 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -302,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F9DC5A1ED821E400C40939 /* WebViewJavascriptBridge_JS.m in Sources */,
 				F794967F1D795DB400A3AE06 /* ViewController.m in Sources */,
 				F79496AD1D795FAA00A3AE06 /* JSCallOCViewController.m in Sources */,
 				F794967C1D795DB400A3AE06 /* AppDelegate.m in Sources */,
@@ -449,10 +457,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RCM2E8M298;
 				INFOPLIST_FILE = OC_JSInteractionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gbank.bus.OC-JSInteractionDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdfae5cd-8eb9-4da0-a7f7-82685497fb69";
+				PROVISIONING_PROFILE_SPECIFIER = WildCard;
 			};
 			name = Debug;
 		};
@@ -460,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OC_JSInteractionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gbank.bus.OC-JSInteractionDemo";
