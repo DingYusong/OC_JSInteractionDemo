@@ -7,7 +7,6 @@
 //
 
 #import "JSCallOCViewController.h"
-#import "WebViewJavascriptBridge_JS.h"
 
 @interface JSCallOCViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *uiWebView;
@@ -18,11 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"gbanker.html"];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:3000/metalInfo/metalInfo.html"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://0.0.0.0:3000/ocjs/demo01.html"]];
-    
     self.uiWebView.delegate = self;
     [self.uiWebView loadRequest:request];
     
