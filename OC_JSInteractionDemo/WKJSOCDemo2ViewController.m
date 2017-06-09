@@ -64,14 +64,50 @@ typedef void(^actionBlock)(id, JSCallback);
     //？？JS调用OC的返回值问题
     [self dealName:message.name value:message.body];
     
-    
     NSString *method = [message.body valueForKey:@"methodName"];
     NSString *data = [message.body valueForKey:@"data"];
+    NSString *callbackId = [message.body valueForKey:@"callbackId"];
     
+    JSCallback callback = ^void(NSDictionary *callbackData) {
+        if(callbackData) {
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:callbackData options:0 error:nil];
+            NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            NSMutableDictionary *wrappedData = [NSMutableDictionary dictionary];
+            [wrappedData setValue:callbackId forKey:@"responseId"];
+            [wrappedData setValue:jsonString forKey:@"responseData"];
+            [self sendMessageDataToJavascript:wrappedData];
+        }
+    };
+
     actionBlock ab = self.actionTable[method];
-    ab(data,nil);
-    
+    ab(data,callback);
 }
+
+- (void)sendMessageDataToJavascript:(id)messageData {
+    NSData *data = [NSJSONSerialization dataWithJSONObject:messageData options:0 error:nil];
+    if(data) {
+        NSString *messageJSON = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\f" withString:@"\\f"];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\u2028" withString:@"\\u2028"];
+        messageJSON = [messageJSON stringByReplacingOccurrencesOfString:@"\u2029" withString:@"\\u2029"];
+        
+        NSString* javascriptCommand = [NSString stringWithFormat:@"ios._handleMessageFromObjC('%@');", messageJSON];
+        if ([[NSThread currentThread] isMainThread]) {
+            [self.webView evaluateJavaScript:javascriptCommand completionHandler:nil];
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self.webView evaluateJavaScript:javascriptCommand completionHandler:nil];
+            });
+        }
+    }
+}
+
+
 
 -(void)dealName:(NSString *)name value:(id)body
 {
@@ -94,6 +130,41 @@ typedef void(^actionBlock)(id, JSCallback);
 
 
 #pragma mark - WKUIDelegate
+// 界面弹出警告框
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }])];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+// 界面弹出确认框
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+    //    DLOG(@"msg = %@ frmae = %@",message,frame);
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(NO);
+    }])];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(YES);
+    }])];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+// 界面弹出输入框
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text = defaultText;
+    }];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(alertController.textFields[0].text?:@"");
+    }])];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 
 #pragma mark - WKNavigationDelegate
@@ -118,7 +189,7 @@ typedef void(^actionBlock)(id, JSCallback);
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation;
 {
-    [self OCCallJSWith:webView];
+//    [self OCCallJSWith:webView];
     [webView evaluateJavaScript:@"document.title" completionHandler:^(id result, NSError * _Nullable error) {
         self.title = result;
     }];
