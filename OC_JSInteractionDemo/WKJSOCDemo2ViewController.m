@@ -199,7 +199,7 @@ typedef void(^actionBlock)(id, JSCallback);
     [self injectJavascriptBridge];
     
     self.actionTable = [NSMutableDictionary new];
-
+    
     
     
     
